@@ -102,7 +102,7 @@ static AL_VADDR LinuxDma_Map(int fd, size_t zSize, size_t offset)
 
   if(vaddr == MAP_FAILED)
   {
-    perror("MAP_FAILED");
+    // perror("MAP_FAILED"); // disable by justchen
     return NULL;
   }
   return vaddr;

@@ -41,7 +41,7 @@
    \file
 ******************************************************************************/
 #pragma once
-
+#include "config.h"  // add by justchen
 #include <stddef.h> // for NULL and size_t
 #include <stdint.h>
 #include <stdbool.h>

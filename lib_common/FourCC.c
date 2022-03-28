@@ -90,6 +90,7 @@ static const TFourCCMapping FourCCMappings[] =
   , AL_FOURCC_MAPPING(FOURCC2('P', '2', '1', '2'), AL_CHROMA_4_2_2, 12, AL_FB_RASTER, AL_C_ORDER_SEMIPLANAR, false, false)
 
   // monochrome: 8b
+  , AL_FOURCC_MAPPING(FOURCC2('G', 'R', 'E', 'Y'), AL_CHROMA_4_0_0, 8, AL_FB_RASTER, AL_C_ORDER_NO_CHROMA, false, false)  // add by justchen
   , AL_FOURCC_MAPPING(FOURCC2('Y', '8', '0', '0'), AL_CHROMA_4_0_0, 8, AL_FB_RASTER, AL_C_ORDER_NO_CHROMA, false, false)
 
   // monochrome: 10b

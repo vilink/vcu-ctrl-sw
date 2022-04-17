@@ -264,6 +264,10 @@ void AL_Buffer_Ref(AL_TBuffer* hBuf)
 void AL_Buffer_Unref(AL_TBuffer* hBuf)
 {
   AL_TBufferImpl* pBuf = (AL_TBufferImpl*)hBuf;
+  if( NULL == hBuf )
+  {
+      return;    // justchen
+  }
 
   int32_t iRefCount = Rtos_AtomicDecrement(&pBuf->iRefCount);
   AL_Assert(iRefCount >= 0);

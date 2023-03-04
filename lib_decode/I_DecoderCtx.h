@@ -187,6 +187,8 @@ typedef struct t_Dec_Ctx
   AL_TPosition tOutputPosition;
 
   TMemDesc tMDChanParam;
+  // add by justchen
+  int *justchen_needRestart;
 }AL_TDecCtx;
 
 /****************************************************************************/

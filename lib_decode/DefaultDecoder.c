@@ -420,7 +420,11 @@ void AL_Default_Decoder_EndDecoding(void* pUserParam, AL_TDecPicStatus* pStatus)
   ++pCtx->iNumFrmBlk2;
 
   if(AL_DEC_IS_PIC_STATE_ENABLED(pStatus->tDecPicState, AL_DEC_PIC_STATE_HANGED))
-    Rtos_Log(AL_LOG_CRITICAL, "\n***** /!\\ Timeout - resetting the decoder /!\\ *****\n");
+  {
+    pCtx->justchen_needRestart[0]++;
+    Rtos_Log( AL_LOG_CRITICAL, "\n***** /!\\ Timeout - resetting the decoder /!\\ *****\n justchen:error inc:%d\n", pCtx->justchen_needRestart[0] );    
+  }
+    
 
   Rtos_ReleaseMutex(pCtx->DecMutex);
 

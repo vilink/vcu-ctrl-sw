@@ -42,6 +42,15 @@
 AL_ERR CreateAvcDecoder(AL_TDecoder** hDec, AL_IDecScheduler* pScheduler, AL_TAllocator* pAllocator, AL_TDecSettings* pSettings, AL_TDecCallBacks* pCB);
 AL_ERR CreateHevcDecoder(AL_TDecoder** hDec, AL_IDecScheduler* pScheduler, AL_TAllocator* pAllocator, AL_TDecSettings* pSettings, AL_TDecCallBacks* pCB);
 
+void justchen_addparToDecoder(AL_HDecoder hDec, int* restptr)
+{
+   AL_TDecoder* pDec =  (AL_TDecoder*)hDec;
+   AL_TDecCtx* pCtx = &pDec->ctx;
+   pCtx->justchen_needRestart = restptr;
+   *pCtx->justchen_needRestart = 0;
+}
+
+
 /*****************************************************************************/
 AL_ERR AL_Decoder_Create(AL_HDecoder* hDec, AL_IDecScheduler* pScheduler, AL_TAllocator* pAllocator, AL_TDecSettings* pSettings, AL_TDecCallBacks* pCB)
 {

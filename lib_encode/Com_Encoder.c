@@ -1028,7 +1028,10 @@ bool AL_Common_Encoder_SetFrameRate(AL_TEncoder* pEnc, uint16_t uFrameRate, uint
   AL_TEncCtx* pCtx = pEnc->pCtx;
 
   if(uFrameRate > pCtx->uInitialFrameRate)
-    AL_RETURN_ERROR(AL_ERR_INVALID_CMD_VALUE);
+  {
+      printf("---> justchen vcu fix: uFrameRate:%d uInitialFrameRate:%d\n",uFrameRate, pCtx->uInitialFrameRate);
+      // AL_RETURN_ERROR(AL_ERR_INVALID_CMD_VALUE);
+  }
 
   Rtos_GetMutex(pCtx->Mutex);
 
